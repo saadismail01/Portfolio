@@ -7,7 +7,10 @@ import Footer from "./pages/Footer.tsx";
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <div className="w-full h-16">
+        <Navbar />
+      </div>
+      <div className="w-[100%] h-[100%]"></div>
       <Home />
       <About />
       <Projects />
