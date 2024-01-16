@@ -12,7 +12,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-between items-center px-10 ">
+    <div className="w-full flex justify-between items-center px-24">
       <img src="../../assets/logo.png.png" alt="logo" className="w-32 h-28" />
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 text-white">
         {Pages.map((page) => (
