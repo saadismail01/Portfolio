@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { menu, x } from "../../assets";
+import { logo, menu, x } from "../../assets";
 
 const Navbar = () => {
   let Pages = [
@@ -12,30 +12,32 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-between items-center px-24">
-      <img src="../../assets/logo.png.png" alt="logo" className="w-32 h-28" />
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1 text-white">
+    <div className="w-full h-full flex justify-between items-center px-24 py-4">
+      <img src={logo} alt="logo" className=" w-18 h-12 " />
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1  space-x-14 ">
         {Pages.map((page) => (
           <li
             key={page.name}
-            className=" bg-teal-300 inline mr-6 p-2 rounded-md text-gray-950 text-md font-semibold"
+            className="inline mr-4 p-2 text-teal-300 text-xl font-semibold"
           >
-            <a href={page.link}>{page.name}</a>
+            <a href={page.link} className="hover:transition-y duration-[20ms]">
+              {page.name}
+            </a>
           </li>
         ))}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center text-white">
+      <div className="sm:hidden flex flex-1 justify-end items-center ">
         <img
           src={open ? x : menu}
           alt="menu"
-          className="bg-teal-300 rounded-md p-2"
+          className="  rounded-md p-2"
           onClick={() => setOpen((prev) => !prev)}
         />
 
         <div
           className={`${open ? `flex` : `hidden`}
-          p-6 bg-teal-300 absolute top-20 right-0 mx-4 my-2  min-w-[140px] rounded-xl  `}
+          p-6 right-16 bg-teal-300 absolute top-20 mx-4 my-2  min-w-[140px] rounded-xl  `}
         >
           <ul className="flex flex-col">
             {Pages.map((page) => (
