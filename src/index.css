@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.fontText {
+  font-family: 'Rubik', sans-serif;
+}
+
 body {
   @apply bg-gray-900;
+
+}
+
+.bg-green-gradient {
+  background: linear-gradient(157.81deg,
+      #def9fa -43.27%,
+      #bef3f5 -21.24%,
+      #9dedf0 12.19%,
+      #7de7eb 29.82%,
+      #5ce1e6 51.94%,
+      #33c7cf 90.29%);
+
+  filter: blur(700px);
 }
