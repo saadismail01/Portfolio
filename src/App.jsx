@@ -8,7 +8,7 @@ import Footer from "./pages/Footer.tsx";
 
 const App = () => {
   return (
-    <div>
+    <div className="w-full px-24">
       <style>
         @import
         url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
