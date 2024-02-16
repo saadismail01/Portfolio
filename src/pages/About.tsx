@@ -4,36 +4,41 @@ import { TypeAnimation } from "react-type-animation";
 
 const About = () => {
   return (
-    <div className="flex flex-col w-full h-screen items-center justify-center space-y-16 bg-black px-24 ">
-      <div className="w-full flex items-start justify-center text-teal-300 fontText text-7xl ">
-        It's About Section
-      </div>
-
-      <div className="flex justify-center items-center">
-        <div className="w-[50%]">
-          <TypeAnimation
-            sequence={[
-              "Passionate frontend developer with over 3+ years of experience specializing in creating intuitive and responsive web applications.           Dedicated to mastering the latest technologies using a modern lang of programming like: Html,Css,TS,TailwindCss and FrameWork like ReactJS,Angular,             crafting pixel-perfect UI designs, and embracing continuous learning. Experienced in optimizing website performance and solving complex coding challenges. Collaborative team player with a keen eye for design and a drive to push the boundaries of what's possible. Let's connect and create something amazing together!", // Types 'One'
-              1000, // Waits 1s
-              // "It's passion...", // Deletes 'One' and types 'Two'
-              // 1000, // Waits 2s
-              // "ReactJS,TS,Angular...", // Types 'Three' without deleting 'Two'
-              () => {
-                console.log("Sequence completed");
-              },
-            ]}
-            wrapper="span"
-            cursor={true}
-            repeat={Infinity}
-            style={{
-              color: "#ffffff",
-              fontSize: "2em",
-              display: "inherit",
-            }}
-          />
+    <div>
+      <div className="w-full h-screen container mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24">
+        <div>
+          <span className="sm:text-4xl flex items-center justify-center w-full lg:text-7xl font-extrabold text-teal-300 ">
+            About Saad!
+          </span>
         </div>
-        <div className="w-[50%] border border-teal-300 rounded shadow-lg drop-shadow-lg shadow-teal-100 transition-shadow ">
-          <img src={pexel} alt="pic" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+          <div className="max-w-lg">
+            <p className="mt-4 text-white lg:text-3xl sm:text-lg">
+              Experienced frontend developer with 3+ years of expertise in HTML,
+              CSS, TypeScript, and frameworks like ReactJS and Angular. Skilled
+              in crafting intuitive UI designs with Tailwind CSS and optimizing
+              website performance. Collaborative team player with a passion for
+              pushing boundaries and creating amazing web applications. Let's
+              connect and build something great!
+            </p>
+            <div className="mt-8">
+              <a
+                href="https://www.linkedin.com/in/saad-ismail01/"
+                className="text-teal-500 hover:text-teal-600 font-medium"
+              >
+                Learn more about Me
+                <span className="ml-2">&#8594;</span>
+              </a>
+            </div>
+          </div>
+          <div className="mt-12 md:mt-0">
+            <img
+              src={pexel}
+              alt="About Us Image"
+              className="object-cover rounded-lg shadow-md"
+            />
+          </div>
         </div>
       </div>
     </div>
