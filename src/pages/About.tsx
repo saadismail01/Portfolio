@@ -1,6 +1,5 @@
 import React from "react";
 import { co, pexel } from "../../assets";
-import { TypeAnimation } from "react-type-animation";
 
 const About = () => {
   return (
