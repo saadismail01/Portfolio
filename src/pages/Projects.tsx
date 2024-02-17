@@ -4,12 +4,12 @@ import { bank, co, kime } from "../../assets";
 const Projects = () => {
   return (
     <div className="flex flex-col w-full h-screen items-center justify-center px-24">
-      <div className="pb-16 w-full h-[20%] flex items-start justify-center text-teal-300 fontText text-7xl">
+      <div className="sm:text-5xl pb-16 w-full h-[20%] flex items-start justify-center text-teal-300 fontText lg:text-7xl">
         Some Of My Project
       </div>
-      <div className="flex justify-center items-center space-x-4">
-        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl shadow-xl shadow-teal-900 bg-black bg-clip-border text-white">
-          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+      <div className="flex flex-col space-y-4 lg:flex-row justify-center items-center space-x-4">
+        <div className="w-[300px] h-[300px] relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white">
+          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={co} type="video/mp4" />
             </video>
@@ -43,8 +43,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl shadow-teal-900 bg-black bg-clip-border text-white shadow-xl">
-          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+        <div className="w-[300px] h-[300px] relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white">
+          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={bank} type="video/mp4" />
             </video>
@@ -76,8 +76,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl shadow-teal-900 bg-black bg-clip-border text-white shadow-xl">
-          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+        <div className="w-[300px] h-[300px] relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white">
+          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={kime} type="video/mp4" />
             </video>
