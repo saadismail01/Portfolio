@@ -8,7 +8,7 @@ const Projects = () => {
         Some Of My Project
       </div>
       <div className="flex justify-center items-center space-x-4">
-        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl bg-black bg-clip-border text-white shadow-md">
+        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl shadow-xl shadow-teal-900 bg-black bg-clip-border text-white">
           <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={co} type="video/mp4" />
@@ -43,7 +43,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl bg-black bg-clip-border text-white shadow-md">
+        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl shadow-teal-900 bg-black bg-clip-border text-white shadow-xl">
           <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={bank} type="video/mp4" />
@@ -76,7 +76,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl bg-black bg-clip-border text-white shadow-md">
+        <div className="relative flex w-[500px] h-[500px] flex-col rounded-xl shadow-teal-900 bg-black bg-clip-border text-white shadow-xl">
           <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={kime} type="video/mp4" />
