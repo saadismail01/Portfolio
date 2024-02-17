@@ -3,6 +3,17 @@ import { pic } from "../../assets";
 import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
+  function handleDownload() {
+    // You can also dynamically generate the PDF file here if needed
+    // For now, just trigger the download of the static file
+    const link = document.createElement("a");
+    link.href = "../../assets/Saad Ismail CV.pdf.pdf";
+    link.download = "Saad Ismail CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <div className=" px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center">
       <div className="flex justify-center items-center w-full h-full flex-col space-y-12 ">
@@ -36,7 +47,10 @@ const Home = () => {
             display: "inline-block",
           }}
         />
-        <button className="overflow-hidden relative w-32 p-2 h-12 text-white bg-teal-400 rounded-md text-xl font-bold cursor-pointer z-10 group">
+        <button
+          onClick={handleDownload}
+          className="overflow-hidden relative w-32 p-2 h-12 text-white bg-teal-400 rounded-md text-xl font-bold cursor-pointer z-10 group"
+        >
           <a>Saad CV</a>
 
           <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
