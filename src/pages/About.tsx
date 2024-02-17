@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const About = () => {
   return (
-    <div>
+    <div className="bg-black">
       <div className="w-full h-screen container mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24">
         <div>
           <span className="sm:text-4xl flex items-center justify-center w-full lg:text-7xl font-extrabold text-teal-300 ">
