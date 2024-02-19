@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { logo, menu, x } from "../../assets";
 
 const Navbar = () => {
+  let Home = useRef(null);
+  const About = useRef(null);
+  const Projects = useRef(null);
+  const Contacts = useRef(null);
+
   let Pages = [
     { name: "Home", link: "./Home.tsx" },
     { name: "About", link: "./About.tsx" },
     { name: "Projects", link: "./Projects.tsx" },
-    { name: "Contacts", link: "./Contacts" },
+    { name: "Contacts", link: "./Contacts.tsx" },
   ];
+
+  const scroll = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
 
   const [open, setOpen] = useState(false);
 
@@ -18,8 +30,8 @@ const Navbar = () => {
         {Pages.map((page) => (
           <>
             <button className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-              <li key={page.name} className=" ">
-                <a href={page.link} className=" ">
+              <li onClick={() => scroll(page.link)} className="">
+                <a onClick={() => scroll(page.link)} className="">
                   {page.name}
                 </a>
               </li>
@@ -53,7 +65,7 @@ const Navbar = () => {
                 key={page.name}
                 className=" mb-4 text-gray-950 text-md font-semibold inline mr-6"
               >
-                <a href={page.link}>{page.name}</a>
+                <a>{page.name}</a>
               </li>
             ))}
           </ul>
