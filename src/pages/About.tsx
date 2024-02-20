@@ -31,7 +31,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/saad-ismail01/"
                 className="text-teal-500 hover:text-teal-600 font-medium"
               >
-                Learn more about Me
+                Know more about me in LinkedIn
                 <span className="ml-2">&#8594;</span>
               </a>
             </div>
