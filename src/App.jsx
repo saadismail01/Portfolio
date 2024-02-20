@@ -17,16 +17,16 @@ const App = () => {
       <div className="w-full h-full">
         <Navbar />
       </div>
-      <div className="w-full h-full">
+      <div id="home" className="w-full h-full">
         <Home />
       </div>
-      <div className="w-full h-full">
+      <div id="about" className="w-full h-full">
         <About />
       </div>
-      <div className="w-full h-full">
+      <div id="project" className="w-full h-full">
         <Projects />
       </div>
-      <div className="w-full h-full">
+      <div id="contact" className="w-full h-full">
         <Contacts />
       </div>
       <div className="w-full h-full">
