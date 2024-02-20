@@ -1,7 +1,12 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { pexel } from "../../assets";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <div id="about" className="bg-gray-900">
       <div className="w-full h-screen container mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24">
@@ -12,7 +17,7 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-          <div className="max-w-lg">
+          <div className="max-w-lg" data-aos="fade-left">
             <p className="mt-4 text-white lg:text-3xl sm:text-lg">
               Experienced frontend developer with 3+ years of expertise in HTML,
               CSS, TypeScript, and frameworks like ReactJS and Angular. Skilled
@@ -31,7 +36,7 @@ const About = () => {
               </a>
             </div>
           </div>
-          <div className="mt-12 md:mt-0">
+          <div className="mt-12 md:mt-0" data-aos="fade-right">
             <img
               src={pexel}
               alt="About Us Image"
