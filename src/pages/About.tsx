@@ -1,9 +1,9 @@
-import React from "react";
-import { co, pexel } from "../../assets";
+import React, { useRef } from "react";
+import { pexel } from "../../assets";
 
 const About = () => {
   return (
-    <div className="bg-gray-900">
+    <div id="about" className="bg-gray-900">
       <div className="w-full h-screen container mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24">
         <div>
           <span className="sm:text-5xl flex items-center justify-center w-full lg:text-7xl font-extrabold text-teal-300 ">

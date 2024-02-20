@@ -3,7 +3,10 @@ import { bank, co, kime } from "../../assets";
 
 const Projects = () => {
   return (
-    <div className="flex flex-col w-full h-screen items-center justify-center px-24">
+    <div
+      id="projects"
+      className="flex flex-col w-full h-screen items-center justify-center px-24"
+    >
       <div className="sm:text-5xl pb-16 w-full h-[20%] flex items-start justify-center text-teal-300 fontText lg:text-7xl">
         Some Of My Project
       </div>

@@ -15,7 +15,10 @@ const Home = () => {
   }
 
   return (
-    <div className=" px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center">
+    <div
+      id="home"
+      className=" px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center"
+    >
       <div className="flex justify-center items-center w-full h-full flex-col space-y-12 ">
         <span className="text-teal-300 text-5xl lg:text-7xl fontText ">
           Hi..
