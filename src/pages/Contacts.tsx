@@ -20,8 +20,8 @@ const Contacts = () => {
           <div className="text-white relative px-8 py-16 bg-gray-900 shadow-lg sm:rounded-3xl sm:p-20">
             <div className="text-center flex flex-col space-y-6">
               <p className="text-white text-lg lg:text-2xl">
-                We are always open to new opportunities. Feel free to contact us
-                with any questions or comments you may have.Have questions?
+                I'm always open to new opportunities. Feel free to contact me
+                with any questions or comments you may have. Have questions?
               </p>
               <p className="text-xl lg:text-4xl">
                 <a href="mailto:saadismail001@gmail.com">
