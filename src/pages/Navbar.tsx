@@ -25,8 +25,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full h-full flex justify-between items-center -mt-5 py-4 px-24 ">
-      <img src={logo} alt="logo" className=" w-18 h-12 " />
+    <div className="w-full h-full flex justify-between items-center -mt-5 py-4 px-12 lg:px-24 ">
+      <img src={logo} alt="logo" className=" w-12 h-8 lg:w-[60px] lg:h-14" />
       <ul className="list-none sm:flex hidden justify-end items-center flex-1  space-x-14 ">
         <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
           <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
@@ -129,7 +129,7 @@ const Navbar = () => {
 
         <div
           className={`${open ? `flex` : `hidden`}
-          p-6 right-16 bg-teal-300 absolute top-20 mx-4 my-2  min-w-[140px] rounded-xl  `}
+          p-6 right-8 bg-teal-300 absolute top-20 mx-4 my-2  min-w-[140px] rounded-xl  `}
         >
           <ul className="flex flex-col">
             <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
