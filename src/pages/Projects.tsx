@@ -1,52 +1,61 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { bank, co, kime } from "../../assets";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <div
       id="projects"
-      className="flex flex-col w-full h-screen items-center justify-center px-24"
+      className="flex flex-col w-full h-full items-center justify-center px-24 mt-44 lg:mt-24"
     >
       <div className="sm:text-5xl pb-16 w-full h-[20%] flex items-start justify-center text-teal-300 fontText lg:text-7xl">
         Some Of My Project
       </div>
-      <div className="flex flex-col space-y-4 lg:flex-row justify-center items-center space-x-4">
-        <div className="w-[300px] h-[300px] relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white">
-          <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+      <div className="flex flex-col space-y-4 items-center justify-center lg:flex-row lg:justify-center lg:items-center lg:space-x-4">
+        <div
+          data-aos="fade-down"
+          className="w-full h-full relative flex lg:w-[500px] lg:h-[500px] mt-4 flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
+        >
+          <div className="relative lg:mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={co} type="video/mp4" />
             </video>
           </div>
-          <div className="">
-            <div className="p-6">
-              <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                React project!
-              </h5>
-              <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                FrontEnd Web project developed with HTML, Tailwind CSS,
-                React.js, and TypeScript! Leveraging HTML for structural
-                elements and Tailwind CSS for streamlined design, this project
-                offers a seamless user experience. Combined with the power of
-                React.js for dynamic functionality and TypeScript for type
-                safety
-              </p>
-            </div>
-            <div className="p-6 pt-0">
-              <button
-                onClick={() => {
-                  window.open("https://react-j3hj.vercel.app/", "_blank");
-                }}
-                data-ripple-light="true"
-                type="button"
-                className="select-none rounded-lg bg-teal-300 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-              >
-                take a look
-              </button>
-            </div>
+
+          <div className="p-6">
+            <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+              React project!
+            </h5>
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+              FrontEnd Web project developed with HTML, Tailwind CSS, React.js,
+              and TypeScript! Leveraging HTML for structural elements and
+              Tailwind CSS for streamlined design, this project offers a
+              seamless user experience. Combined with the power of React.js for
+              dynamic functionality and TypeScript for type safety
+            </p>
+          </div>
+          <div className="p-6 pt-0">
+            <button
+              onClick={() => {
+                window.open("https://react-j3hj.vercel.app/", "_blank");
+              }}
+              data-ripple-light="true"
+              type="button"
+              className="select-none rounded-lg bg-teal-300 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            >
+              take a look
+            </button>
           </div>
         </div>
 
-        <div className="w-[300px] h-[300px] relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white">
+        <div
+          data-aos="fade-down"
+          className="w-full h-full relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
+        >
           <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={bank} type="video/mp4" />
@@ -79,7 +88,10 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="w-[300px] h-[300px] relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white">
+        <div
+          data-aos="fade-down"
+          className="w-full h-full relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
+        >
           <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
             <video width="500" height="100" autoPlay>
               <source src={kime} type="video/mp4" />
