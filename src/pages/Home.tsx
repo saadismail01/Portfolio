@@ -7,7 +7,7 @@ const Home = () => {
     // You can also dynamically generate the PDF file here if needed
     // For now, just trigger the download of the static file
     const link = document.createElement("a");
-    link.href = "../../assets/Saad Ismail CV.pdf.pdf";
+    link.href = "../../assets/Saad Ismail CV (3).pdf";
     link.download = "Saad Ismail CV.pdf";
     document.body.appendChild(link);
     link.click();
