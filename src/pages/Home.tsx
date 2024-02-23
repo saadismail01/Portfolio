@@ -1,6 +1,6 @@
 import React from "react";
-import { pic } from "../../assets";
 import { TypeAnimation } from "react-type-animation";
+import MyCV from "../assets/Saad_Ismail_CV.pdf";
 
 const Home = () => {
   function handleDownload() {
@@ -17,15 +17,11 @@ const Home = () => {
   return (
     <div className=" px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center">
       <div className="flex justify-center items-center w-full h-full flex-col space-y-12 ">
-        <span className="text-teal-300 text-sm lg:text-6xl fontText ">
-          Hi there..
-        </span>
+        <span className="text-teal-300 text-sm lg:text-6xl fontText ">Hi there..</span>
         <span className="flex items-center justify-center  text-teal-300 text-md lg:text-6xl fontText">
           This is <span className="text-white mx-2">Saad </span>Ismail.
         </span>
-        <h2 className="text-white text- sm lg:text-4xl fontText">
-          a Web Developer
-        </h2>
+        <h2 className="text-white text- sm lg:text-4xl fontText">a Web Developer</h2>
 
         <TypeAnimation
           sequence={[
@@ -49,9 +45,10 @@ const Home = () => {
             justifyContent: "center",
           }}
         />
-        <button
-          onClick={handleDownload}
-          className="overflow-hidden relative w-32 p-2 h-12 text-white bg-teal-400 rounded-md text-xl font-bold cursor-pointer z-10 group"
+        <a
+          href={MyCV}
+          target="_blank"
+          className="overflow-hidden relative w-32 p-2 h-12 flex justify-center items-center text-white bg-teal-400 rounded-md text-xl font-bold cursor-pointer z-10 group"
         >
           <a>Saad CV</a>
 
@@ -61,7 +58,7 @@ const Home = () => {
           <span className="group-hover:opacity-100  group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
             Download
           </span>
-        </button>
+        </a>
       </div>
       <div className="area">
         <ul className="circles">
