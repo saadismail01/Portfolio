@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
-import { bank, co, kime } from "../../assets";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+
 import Project from "../components/Project";
 
 const Projects = () => {
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
   return (
     <div
       id="projects"
