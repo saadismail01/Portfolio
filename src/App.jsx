@@ -27,7 +27,7 @@ const App = () => {
       <div id="project" className="w-full h-full">
         <Projects />
       </div>
-      <div id="project" className="w-full h-full">
+      <div id="skills" className="w-full h-full">
         <Skills />
       </div>
       <div id="contact" className="w-full h-full">
