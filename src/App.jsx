@@ -5,6 +5,7 @@ import About from "./pages/About.tsx";
 import Projects from "./pages/Projects.tsx";
 import Contacts from "./pages/Contacts.tsx";
 import Footer from "./pages/Footer.tsx";
+import Skills from "./pages/Skills.tsx";
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
       </div>
       <div id="project" className="w-full h-full">
         <Projects />
+      </div>
+      <div id="project" className="w-full h-full">
+        <Skills />
       </div>
       <div id="contact" className="w-full h-full">
         <Contacts />
