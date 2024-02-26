@@ -26,8 +26,8 @@ const Navbar = () => {
 
   return (
     <div className="w-full h-full flex justify-between items-center -mt-5 py-4 px-12 lg:px-24 ">
-      <img src={logo} alt="logo" className=" w-12 h-8 lg:w-[60px] lg:h-14" />
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1  space-x-14 ">
+      <img src={logo} alt="logo" className=" w-12 h-8 lg:w-[75px] lg:h-14" />
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1  space-x-6 ">
         <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
           <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
             Home
@@ -87,6 +87,33 @@ const Navbar = () => {
               duration={500}
             >
               Projects
+            </Link>
+          </span>
+        </li>
+
+        <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
+          <Link
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Skills
+          </Link>
+
+          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+          <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
+            <Link
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+            >
+              Skills
             </Link>
           </span>
         </li>
@@ -209,6 +236,33 @@ const Navbar = () => {
                   duration={500}
                 >
                   Projects
+                </Link>
+              </span>
+            </li>
+
+            <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
+              <Link
+                to="skills"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Skills
+              </Link>
+
+              <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+              <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+              <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+              <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
+                <Link
+                  to="skills"
+                  spy={true}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}
+                >
+                  Skills
                 </Link>
               </span>
             </li>
