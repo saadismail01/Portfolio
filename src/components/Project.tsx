@@ -11,7 +11,7 @@ const Project = () => {
   return (
     <div className="flex flex-col space-y-4 items-center justify-center lg:flex-row lg:justify-center lg:items-center lg:space-x-4">
       <div
-        data-aos="fade-down"
+        data-aos="fade-up"
         className="w-[300px] h-full relative flex lg:w-[500px] lg:h-[500px] mt-4 flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
       >
         <div className="relative lg:mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
@@ -47,7 +47,7 @@ const Project = () => {
       </div>
 
       <div
-        data-aos="fade-down"
+        data-aos="fade-up"
         className="w-[300px] h-full relative flex lg:w-[500px] lg:h-[500px]  flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
       >
         <div className="relative mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
@@ -82,7 +82,7 @@ const Project = () => {
         </div>
       </div>
       <div
-        data-aos="fade-down"
+        data-aos="fade-up"
         className="w-[300px] h-full relative flex lg:w-[500px] lg:h-[500px] mt-4 flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
       >
         <div className="relative lg:mx-4 h-full overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
