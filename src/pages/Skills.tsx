@@ -17,7 +17,10 @@ import {
 const Skills = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen py-36 px-24 mt-26">
-      <div className="sm:text-5xl w-full h-full  flex items-start justify-center text-teal-300 fontText lg:text-7xl">
+      <div
+        data-aos="fade-down"
+        className="sm:text-5xl w-full h-full  flex items-start justify-center text-teal-300 fontText lg:text-7xl"
+      >
         My Skills
       </div>
 
