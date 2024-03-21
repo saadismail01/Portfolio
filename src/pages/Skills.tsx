@@ -24,33 +24,68 @@ const Skills = () => {
         My Skills
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center space-y-24 mr-24 md:mr-0">
-        <div className="flex space-x-8 lg:space-x-16" data-aos="zoom-in">
-          <img className="w-[70px] h-[70px]" src={html} alt="" />
+      <div className="w-full flex flex-col justify-center items-center space-y-24 mr-[60px] md:mr-0">
+        <div className="flex space-x-4 lg:space-x-16" data-aos="zoom-in">
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] "
+            src={html}
+            alt=""
+          />
 
-          <img className="w-[70px] h-[70px]" src={css} alt="" />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={css}
+            alt=""
+          />
 
-          <img className="w-[70px] h-[70px]" src={tailwind} />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={tailwind}
+          />
 
-          <img className="w-[70px] h-[70px]" src={js} />
+          <img className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]" src={js} />
         </div>
 
-        <div className="flex space-x-8 lg:space-x-16" data-aos="zoom-in">
-          <img className="w-[70px] h-[70px]" src={ts} alt="" />
+        <div className="flex space-x-4 lg:space-x-16" data-aos="zoom-in">
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={ts}
+            alt=""
+          />
 
-          <img className="w-[70px] h-[70px]" src={react} alt="" />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={react}
+            alt=""
+          />
 
-          <img className="w-[70px] h-[70px]" src={angular} alt="" />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={angular}
+            alt=""
+          />
 
-          <img className="w-[70px] h-[70px]" src={nodejs} alt="" />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={nodejs}
+            alt=""
+          />
         </div>
 
         <div
-          className="flex items-center justify-center w-full space-x-8 lg:space-x-16"
+          className="flex items-center justify-center w-full space-x-4 lg:space-x-16"
           data-aos="zoom-in"
         >
-          <img className="w-[70px] h-[70px]" src={github} alt="" />
-          <img className="w-[70px] h-[70px]" src={git} alt="" />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={github}
+            alt=""
+          />
+          <img
+            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
+            src={git}
+            alt=""
+          />
         </div>
       </div>
     </div>
