@@ -8,7 +8,10 @@ const Contacts = () => {
   }, []);
   return (
     <div id="contacts" className="w-full h-screen mt-64 lg:mt-28">
-      <div className="  bg-gray-900 py-6 flex flex-col justify-center sm:py-12">
+      <div
+        data-aos="fade-down"
+        className="  bg-gray-900 py-6 flex flex-col justify-center sm:py-12"
+      >
         <h1 className="sm:text-5xl pb-16 w-full h-[20%] flex items-start justify-center text-teal-300 fontText lg:text-7xl mb-16">
           Contact Us!
         </h1>
