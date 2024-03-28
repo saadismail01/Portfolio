@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  angular,
-  css,
-  git,
-  github,
-  html,
-  js,
-  nodejs,
-  react,
-  tailwind,
-  ts,
-} from "../assets";
+import Skillsss from "../components/Skillsss";
 
 const Skills = () => {
   return (
@@ -24,70 +13,7 @@ const Skills = () => {
         My Skills
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center space-y-24 mr-[60px] md:mr-0">
-        <div className="flex space-x-4 lg:space-x-16" data-aos="zoom-in">
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] "
-            src={html}
-            alt=""
-          />
-
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={css}
-            alt=""
-          />
-
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={tailwind}
-          />
-
-          <img className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]" src={js} />
-        </div>
-
-        <div className="flex space-x-4 lg:space-x-16" data-aos="zoom-in">
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={ts}
-            alt=""
-          />
-
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={react}
-            alt=""
-          />
-
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={angular}
-            alt=""
-          />
-
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={nodejs}
-            alt=""
-          />
-        </div>
-
-        <div
-          className="flex items-center justify-center w-full space-x-4 lg:space-x-16"
-          data-aos="zoom-in"
-        >
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={github}
-            alt=""
-          />
-          <img
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]"
-            src={git}
-            alt=""
-          />
-        </div>
-      </div>
+      <Skillsss />
     </div>
   );
 };
