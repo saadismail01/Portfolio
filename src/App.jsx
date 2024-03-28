@@ -15,25 +15,25 @@ const App = () => {
         url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
       </style>
       ;
-      <div className="w-full h-full">
+      <div>
         <Navbar />
       </div>
-      <div id="home" className="w-full h-full">
+      <div id="home">
         <Home />
       </div>
-      <div id="about" className="w-full h-full">
+      <div id="about">
         <About />
       </div>
-      <div id="project" className="w-full h-full">
+      <div id="project">
         <Projects />
       </div>
-      <div id="skills" className="w-full h-full">
+      <div id="skills">
         <Skills />
       </div>
-      <div id="contact" className="w-full h-full">
+      <div id="contact">
         <Contacts />
       </div>
-      <div className="w-full h-full">
+      <div>
         <Footer />
       </div>
     </div>
