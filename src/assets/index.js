@@ -8,5 +8,17 @@ import js from "./js.svg";
 import nodejs from "./nodejs.svg";
 import react from "./react.svg";
 import tailwind from "./tailwind.svg";
-
-export { ts, angular, html, css, git, github, js, nodejs, react, tailwind };
+import Saad_Ismail_cv from "./Saad_Ismail_CV.pdf";
+export {
+  ts,
+  angular,
+  html,
+  css,
+  git,
+  github,
+  js,
+  nodejs,
+  react,
+  tailwind,
+  Saad_Ismail_cv,
+};
