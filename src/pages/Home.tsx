@@ -3,17 +3,6 @@ import { TypeAnimation } from "react-type-animation";
 import { Saad_Ismail_cv } from "../assets";
 
 const Home = () => {
-  function handleDownload() {
-    // You can also dynamically generate the PDF file here if needed
-    // For now, just trigger the download of the static file
-    const link = document.createElement("a");
-    link.href = "../../assets/Saad Ismail CV (3).pdf";
-    link.download = "Saad Ismail CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
   return (
     <div className=" px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center">
       <div className="flex justify-center items-center w-full h-full flex-col space-y-12 ">
