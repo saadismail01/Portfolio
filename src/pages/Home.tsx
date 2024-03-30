@@ -1,6 +1,6 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import MyCV from "../assets/Saad_Ismail_CV.pdf";
+import { Saad_Ismail_cv } from "../assets";
 
 const Home = () => {
   function handleDownload() {
@@ -50,7 +50,7 @@ const Home = () => {
           }}
         />
         <a
-          href={MyCV}
+          href={Saad_Ismail_cv}
           target="_blank"
           className="overflow-hidden relative w-32 p-2 h-12 flex justify-center items-center text-white bg-teal-400 rounded-md text-xl font-bold cursor-pointer z-10 group"
         >
