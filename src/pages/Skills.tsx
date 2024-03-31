@@ -5,7 +5,7 @@ import Skillsss from "../components/Skillsss";
 
 const Skills = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen py-36 px-24 mt-26">
+    <div className="flex flex-col items-center justify-center w-full h-screen mt-14 px-32 py-32 space-y-16">
       <div
         data-aos="fade-down"
         className="sm:text-5xl w-full h-full  flex items-start justify-center text-teal-300 fontText lg:text-7xl"
@@ -13,7 +13,9 @@ const Skills = () => {
         My Skills
       </div>
 
-      <Skillsss />
+      <div>
+        <Skillsss />
+      </div>
     </div>
   );
 };
