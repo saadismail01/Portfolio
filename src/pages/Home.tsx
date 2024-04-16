@@ -24,7 +24,7 @@ const Home = () => {
             1000, // Waits 2s
             // "ReactJS,TS,Angular...", // Types 'Three' without deleting 'Two'
             () => {
-              console.log("Sequence completed");
+              // console.log("Sequence completed");
             },
           ]}
           wrapper="span"
@@ -32,7 +32,7 @@ const Home = () => {
           repeat={Infinity}
           style={{
             color: "#5eead4",
-            fontSize: "2em",
+            fontSize: "1.4em",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
