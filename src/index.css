@@ -192,6 +192,21 @@
    overflow-x: hidden;
 
  }
+ @keyframes pulse-light {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-light {
+  animation: pulse-light 6s ease-in-out infinite;
+}
+
 
  .bg-green-gradient {
    background: linear-gradient(157.81deg,
