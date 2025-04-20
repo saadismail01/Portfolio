@@ -8,8 +8,8 @@ const About = () => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <div id="about" className="bg-gray-900">
-      <div className="w-full h-screen container mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24">
+    <div id="about">
+      <div className="w-[90%] h-screen container mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24">
         <div data-aos="fade-down">
           <span className="sm:text-5xl flex items-center justify-center w-full lg:text-7xl font-extrabold text-teal-300 ">
             About Saad!

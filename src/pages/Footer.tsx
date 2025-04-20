@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="flex flex-col items-center bg-neutral-200 text-center text-white dark:bg-gray-900">
+      <footer className="flex flex-col items-center text-center text-white ">
         <div className="container pt-9">
           <div className="mb-4">
             <span className="text-teal-300 fontText text-xl">
@@ -40,8 +40,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full bg-gray-900 p-4 text-center text-teal-700 dark:text-teal-200">
-          © 2024 Copyright:
+        <div className="w-full p-4 text-center text-teal-700 dark:text-teal-200">
+          © 2025 Copyright:
           <a className="text-neutral-800 dark:text-neutral-400">
             By Saad Ismail
           </a>

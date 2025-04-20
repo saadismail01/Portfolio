@@ -9,7 +9,7 @@ const Project = () => {
   }, []);
 
   return (
-    <div className="flex flex-col space-y-4 items-center justify-center lg:flex-row lg:justify-center lg:items-center lg:space-x-4">
+    <div className="flex flex-col w-[90%]  space-y-4 items-center justify-center lg:flex-row lg:justify-center lg:items-center lg:space-x-4">
       <div
         data-aos="fade-up"
         className="w-[300px] h-full relative flex lg:w-[500px] lg:h-[500px] mt-4 flex-col rounded-xl shadow-white bg-black bg-clip-border text-white"
