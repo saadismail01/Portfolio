@@ -156,7 +156,7 @@ const Navbar = () => {
 
         <div
           className={`${open ? `flex` : `hidden`}
-          p-6 right-8 bg-teal-300 absolute top-20 mx-4 my-2  min-w-[140px] rounded-xl`}
+          p-6 right-8 bg-gray-900 absolute top-20 mx-4 my-2  min-w-[140px] rounded-xl`}
         >
           <ul className="flex flex-col">
             <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
@@ -164,23 +164,11 @@ const Navbar = () => {
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={100}
                 duration={500}
               >
                 Home
               </Link>
-
-              <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                <Link
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Home
-                </Link>
-              </span>
             </li>
 
             <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
@@ -188,23 +176,11 @@ const Navbar = () => {
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={100}
                 duration={500}
               >
                 About
               </Link>
-
-              <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  About
-                </Link>
-              </span>
             </li>
 
             <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
@@ -212,23 +188,11 @@ const Navbar = () => {
                 to="projects"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={100}
                 duration={500}
               >
                 Projects
               </Link>
-
-              <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                <Link
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={-50}
-                  duration={500}
-                >
-                  Projects
-                </Link>
-              </span>
             </li>
 
             <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
@@ -236,23 +200,11 @@ const Navbar = () => {
                 to="skills"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={100}
                 duration={500}
               >
                 Skills
               </Link>
-
-              <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                <Link
-                  to="skills"
-                  spy={true}
-                  smooth={true}
-                  offset={-50}
-                  duration={500}
-                >
-                  Skills
-                </Link>
-              </span>
             </li>
 
             <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
@@ -265,18 +217,6 @@ const Navbar = () => {
               >
                 Contacts
               </Link>
-
-              <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-50}
-                  duration={500}
-                >
-                  Contacts
-                </Link>
-              </span>
             </li>
           </ul>
         </div>

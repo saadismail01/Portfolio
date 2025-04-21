@@ -4,7 +4,7 @@ import { Saad_Ismail_cv } from "../assets";
 
 const Home = () => {
   return (
-    <div className=" px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center">
+    <div className="px-4 sm:px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center overflow-x-hidden">
       <div className="flex justify-center items-center w-full h-full flex-col space-y-12 ">
         <span className="text-teal-300 text-sm lg:text-6xl fontText ">
           Hi there..

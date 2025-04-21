@@ -12,9 +12,6 @@ import {
   ts,
 } from "../assets";
 
-const iconsPerPage = 3;
-const totalIcons = 9; // Assuming there are 9 icons in total
-
 const skillData = [
   {
     title: "HTML",
@@ -55,9 +52,21 @@ const skillData = [
   },
 ];
 
+const iconAssets = [
+  html,
+  css,
+  tailwind,
+  js,
+  ts,
+  react,
+  angular,
+  nodejs,
+  github,
+];
+
 const SkillCard = ({ icon, title, description }) => (
-  <div className="max-w-xs h-64 rounded overflow-hidden shadow-2xl m-6 text-white flex flex-col">
-    <div className="flex-grow flex flex-col justify-center items-center mx-6">
+  <div className="w-full sm:w-80 h-64 rounded overflow-hidden shadow-2xl m-4 text-white flex flex-col bg-gray-900 transition duration-500 ease-in-out">
+    <div className="flex-grow flex flex-col justify-center items-center px-4">
       <img className="w-16 h-16 mb-4" src={icon} alt={`${title} icon`} />
       <div className="text-center">
         <div className="font-bold text-lg mb-2">{title}</div>
@@ -69,81 +78,71 @@ const SkillCard = ({ icon, title, description }) => (
 
 const Skillsss = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 850);
+  const [iconsPerPage, setIconsPerPage] = useState(3);
+  const [direction, setDirection] = useState("right");
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 850);
+      const width = window.innerWidth;
+      if (width <= 640) setIconsPerPage(1);
+      else if (width <= 1024) setIconsPerPage(2);
+      else setIconsPerPage(3);
     };
 
+    handleResize(); // initial check
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setStartIndex((prevIndex) => (prevIndex + 1) % totalIcons);
-    }, 3000); // Change the delay as needed (milliseconds)
-
-    return () => clearInterval(timer);
-  }, []);
+  const totalIcons = skillData.length;
 
   const handleNext = () => {
-    setStartIndex(
-      (prevIndex) => (prevIndex + (isMobile ? 1 : iconsPerPage)) % totalIcons
-    );
+    setDirection("right");
+    setStartIndex((prev) => (prev + iconsPerPage) % totalIcons);
   };
 
   const handleBack = () => {
-    setStartIndex(
-      (prevIndex) =>
-        (prevIndex - (isMobile ? 1 : iconsPerPage) + totalIcons) % totalIcons
-    );
+    setDirection("left");
+    setStartIndex((prev) => (prev - iconsPerPage + totalIcons) % totalIcons);
   };
 
+  const visibleIcons = [...Array(iconsPerPage)].map((_, index) => {
+    const iconIndex = (startIndex + index) % totalIcons;
+    return {
+      ...skillData[iconIndex],
+      icon: iconAssets[iconIndex],
+      key: `${startIndex}-${index}`,
+    };
+  });
+
   return (
-    <div>
-      <div data-aos="fade-up" className="flex flex-wrap justify-center -mt-64">
-        {[...Array(isMobile ? 1 : iconsPerPage)].map((_, index) => {
-          const iconIndex = (startIndex + index) % totalIcons;
-          const icon = [
-            html,
-            css,
-            tailwind,
-            js,
-            ts,
-            react,
-            angular,
-            nodejs,
-            github,
-            git,
-          ][iconIndex];
-          const { title, description } = skillData[iconIndex];
-          return (
-            <SkillCard
-              key={index}
-              icon={icon}
-              title={title}
-              description={description}
-            />
-          );
-        })}
+    <div className="top-0 left-0 w-full z-[9999] bg-opacity-80 backdrop-blur-md py-10 px-4">
+      <div
+        key={startIndex}
+        className={`flex flex-wrap justify-center transition-transform duration-700 ease-in-out ${
+          direction === "right" ? "animate-slide-right" : "animate-slide-left"
+        }`}
+      >
+        {visibleIcons.map(({ key, icon, title, description }) => (
+          <SkillCard
+            key={key}
+            icon={icon}
+            title={title}
+            description={description}
+          />
+        ))}
       </div>
-      <div className="flex justify-center space-x-24 mt-4">
+
+      <div className="flex justify-center space-x-8 mt-6">
         <button
-          data-aos="fade-right"
           onClick={handleBack}
-          className="mr-2 px-4 py-2 text-white border border-teal-300 rounded-md"
+          className="px-4 py-2 text-white border border-teal-300 rounded-md hover:bg-teal-600 transition-all duration-300"
         >
           Back
         </button>
         <button
-          data-aos="fade-left"
           onClick={handleNext}
-          className="px-4 py-2 text-white border border-teal-300 rounded-md"
+          className="px-4 py-2 text-white border border-teal-300 rounded-md hover:bg-teal-600 transition-all duration-300"
         >
           Next
         </button>
