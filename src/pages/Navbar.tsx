@@ -15,13 +15,6 @@ const Navbar = () => {
     });
   };
 
-  let Pages = [
-    { name: "Home", link: Home },
-    { name: "About", link: About },
-    { name: "Projects", link: Projects },
-    { name: "Contacts", link: Contacts },
-  ];
-
   const [open, setOpen] = useState(false);
 
   return (
@@ -146,7 +139,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center ">
+      <div className="sm:hidden flex flex-1 justify-end items-center z-10">
         <img
           src={open ? x : menu}
           alt="menu"
