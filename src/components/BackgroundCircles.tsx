@@ -1,11 +1,4 @@
 import React from "react";
-import Navbar from "../pages/Navbar";
-import Home from "../pages/Home";
-import About from "../pages/Home";
-import Projects from "../pages/Home";
-import Skills from "../pages/Home";
-import Contacts from "../pages/Home";
-import Footer from "../pages/Home";
 /* eslint-disable react/no-unescaped-entities */
 
 const BackgroundCircles = () => {
