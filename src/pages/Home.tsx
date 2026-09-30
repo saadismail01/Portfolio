@@ -1,73 +1,78 @@
-import React from "react";
+﻿import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Saad_Ismail_cv } from "../assets";
+import { Link } from "react-scroll";
 
 const Home = () => {
   return (
-    <div className="px-4 sm:px-24 flex items-center justify-center h-screen w-full -mt-10 sm:flex sm:flex-row sm:justify-between sm:items-center overflow-x-hidden">
-      <div className="flex justify-center items-center w-full h-full flex-col space-y-12 ">
-        <span className="text-teal-300 text-sm lg:text-6xl fontText ">
-          Hi there..
-        </span>
-        <span className="flex items-center justify-center  text-teal-300 text-md lg:text-6xl fontText">
-          This is <span className="text-white mx-2">Saad </span>Ismail.
-        </span>
-        <h2 className="text-white text- sm lg:text-4xl fontText">
-          a Web Developer
-        </h2>
+    <section id="home" className="relative flex items-center justify-center min-h-screen w-full overflow-hidden grid-bg">
 
-        <TypeAnimation
-          sequence={[
-            "It's more then Code, ", // Types 'One'
-            1000, // Waits 1s
-            "It's passion...", // Deletes 'One' and types 'Two'
-            1000, // Waits 2s
-            // "ReactJS,TS,Angular...", // Types 'Three' without deleting 'Two'
-            () => {
-              // console.log("Sequence completed");
-            },
-          ]}
-          wrapper="span"
-          cursor={true}
-          repeat={Infinity}
-          style={{
-            color: "#5eead4",
-            fontSize: "1.4em",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        />
-        <a
-          href={Saad_Ismail_cv}
-          target="_blank"
-          className="overflow-hidden relative w-32 p-2 h-12 flex justify-center items-center text-white bg-teal-400 rounded-md text-xl font-bold cursor-pointer z-10 group"
-        >
-          <a>Saad CV</a>
-
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-          <span className="group-hover:opacity-100  group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-            Download
-          </span>
-        </a>
-      </div>
+      {/* Floating particles */}
       <div className="area">
         <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {Array.from({ length: 10 }).map((_, i) => <li key={i} />)}
         </ul>
       </div>
-    </div>
+
+      {/* Radial glow blobs */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-600/8 blur-3xl pointer-events-none" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto">
+
+        {/* Badge */}
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs font-medium tracking-widest uppercase">
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          Available for work
+        </span>
+
+        {/* Name */}
+        <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-8xl mb-4 leading-tight tracking-tight">
+          <span className="text-white">Hi, I am </span>
+          <span className="grad-text glow-cyan">Saad</span>
+        </h1>
+
+        <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-4xl text-slate-300 mb-6">
+          Frontend Developer
+        </h2>
+
+        {/* Type animation */}
+        <div className="h-10 mb-10">
+          <TypeAnimation
+            sequence={[
+              "Building beautiful user interfaces.", 1500,
+              "Turning ideas into code.", 1500,
+              "React · TypeScript · Angular.", 1500,
+              "It is more than code — it is passion.", 2000,
+            ]}
+            wrapper="p"
+            cursor={true}
+            repeat={Infinity}
+            className="text-cyan-400/80 text-lg sm:text-xl font-light"
+          />
+        </div>
+
+        {/* CTA buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <a href={Saad_Ismail_cv} target="_blank" rel="noopener noreferrer" className="btn-neon">
+            Download CV
+          </a>
+          <Link
+            to="contact" spy smooth offset={-64} duration={500}
+            className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-semibold text-sm uppercase tracking-widest hover:bg-cyan-500/20 transition-all duration-300 cursor-pointer"
+          >
+            Contact Me
+          </Link>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="mt-20 flex flex-col items-center gap-2 animate-bounce opacity-50">
+          <span className="text-xs text-slate-500 tracking-widest uppercase">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-cyan-400 to-transparent" />
+        </div>
+      </div>
+    </section>
   );
 };
 

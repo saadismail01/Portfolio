@@ -1,220 +1,86 @@
-import React, { useRef, useState } from "react";
-import { logo, menu, x } from "../../assets";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 
+const NAV_LINKS = [
+  { label: "Home",     to: "home" },
+  { label: "About",    to: "about" },
+  { label: "Projects", to: "projects" },
+  { label: "Skills",   to: "skills" },
+  { label: "Contact",  to: "contact" },
+];
+
 const Navbar = () => {
-  let Home = useRef(null);
-  const About = useRef(null);
-  const Projects = useRef(null);
-  const Contacts = useRef(null);
-
-  const scroll = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: "smooth",
-    });
-  };
-
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="w-full h-full flex justify-between items-center py-4 px-12 lg:px-24">
-      <img src={logo} alt="logo" className=" w-12 h-8 lg:w-[75px] lg:h-14" />
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1 ">
-        <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-          <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
-            Home
-          </Link>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#050b18]/90 backdrop-blur-xl border-b border-cyan-500/10 shadow-lg shadow-cyan-500/5"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+        {/* Logo */}
+        <span className="font-display font-bold text-xl grad-text tracking-wide select-none">
+          Saad<span className="text-cyan-400">.</span>dev
+        </span>
 
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-          <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-            <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
-              Home
-            </Link>
-          </span>
-        </li>
+        {/* Desktop links */}
+        <ul className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map(({ label, to }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                spy smooth offset={-64} duration={500}
+                className="relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 cursor-pointer transition-colors duration-200 group"
+                activeClass="text-cyan-400"
+              >
+                {label}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-0 bg-cyan-400 group-hover:w-3/4 transition-all duration-300" />
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-          <Link to="about" spy={true} smooth={true} offset={50} duration={500}>
-            About
-          </Link>
-
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-          <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-            >
-              About
-            </Link>
-          </span>
-        </li>
-
-        <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-          <Link
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Projects
-          </Link>
-
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-          <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-            <Link
-              to="projects"
-              spy={true}
-              smooth={true}
-              offset={-50}
-              duration={500}
-            >
-              Projects
-            </Link>
-          </span>
-        </li>
-
-        <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-          <Link
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Skills
-          </Link>
-
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-          <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-            <Link
-              to="skills"
-              spy={true}
-              smooth={true}
-              offset={-50}
-              duration={500}
-            >
-              Skills
-            </Link>
-          </span>
-        </li>
-
-        <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-          <Link
-            to="contacts"
-            spy={true}
-            smooth={true}
-            offset={100}
-            duration={500}
-          >
-            Contacts
-          </Link>
-
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-300 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-teal-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-          <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-            <Link
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-50}
-              duration={500}
-            >
-              Contacts
-            </Link>
-          </span>
-        </li>
-      </ul>
-
-      <div className="sm:hidden flex flex-1 justify-end items-center z-10">
-        <img
-          src={open ? x : menu}
-          alt="menu"
-          className="  rounded-md p-2"
-          onClick={() => setOpen((prev) => !prev)}
-        />
-
-        <div
-          className={`${open ? `flex` : `hidden`}
-          p-6 right-8 bg-gray-900 absolute top-20 mx-4 my-2  min-w-[140px] rounded-xl`}
+        {/* Mobile hamburger */}
+        <button
+          id="nav-toggle"
+          className="md:hidden flex flex-col gap-1.5 p-2 group"
+          onClick={() => setOpen((p) => !p)}
+          aria-label="Toggle menu"
         >
-          <ul className="flex flex-col">
-            <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-              <Link
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={100}
-                duration={500}
-              >
-                Home
-              </Link>
-            </li>
+          <span className={`block h-0.5 w-6 bg-cyan-400 transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block h-0.5 w-6 bg-cyan-400 transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-6 bg-cyan-400 transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
+      </nav>
 
-            <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
+      {/* Mobile menu */}
+      <div className={`md:hidden transition-all duration-300 overflow-hidden ${open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
+        <ul className="flex flex-col px-6 pb-4 gap-1 bg-[#050b18]/95 backdrop-blur-xl border-b border-cyan-500/10">
+          {NAV_LINKS.map(({ label, to }) => (
+            <li key={to}>
               <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={100}
-                duration={500}
+                to={to}
+                spy smooth offset={-64} duration={500}
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-500/5 rounded-lg cursor-pointer transition-all duration-200"
               >
-                About
+                {label}
               </Link>
             </li>
-
-            <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={100}
-                duration={500}
-              >
-                Projects
-              </Link>
-            </li>
-
-            <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-              <Link
-                to="skills"
-                spy={true}
-                smooth={true}
-                offset={100}
-                duration={500}
-              >
-                Skills
-              </Link>
-            </li>
-
-            <li className="overflow-hidden relative w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer z-10 group">
-              <Link
-                to="contacts"
-                spy={true}
-                smooth={true}
-                offset={100}
-                duration={500}
-              >
-                Contacts
-              </Link>
-            </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
       </div>
-    </div>
+    </header>
   );
 };
 

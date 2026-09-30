@@ -1,224 +1,154 @@
- /* start */
- @tailwind base;
- @tailwind components;
- @tailwind utilities;
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
- /*Start Animations*/
- @-webkit-keyframes animatetop {
-   from {
-     top: -300px;
-     opacity: 0;
-   }
-
-   to {
-     top: 0;
-     opacity: 1;
-   }
- }
-
- @keyframes animatetop {
-   from {
-     top: -300px;
-     opacity: 0;
-   }
-
-   to {
-     top: 0;
-     opacity: 1;
-   }
- }
-
- @-webkit-keyframes zoomIn {
-   0% {
-     opacity: 0;
-     -webkit-transform: scale3d(0.3, 0.3, 0.3);
-     transform: scale3d(0.3, 0.3, 0.3);
-   }
-
-   50% {
-     opacity: 1;
-   }
- }
-
- @keyframes zoomIn {
-   0% {
-     opacity: 0;
-     -webkit-transform: scale3d(0.3, 0.3, 0.3);
-     transform: scale3d(0.3, 0.3, 0.3);
-   }
-
-   50% {
-     opacity: 1;
-   }
- }
-
- /*End Animations*/
- /*
--- Start BackGround Animation 
-*/
- .area {
-   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-   width: 94%;
-   height: 100vh;
-   position: absolute;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   z-index: -1;
- }
-
- .circles {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
- }
-
- .circles li {
-   position: absolute;
-   display: block;
-   list-style: none;
-   width: 20px;
-   height: 20px;
-   background: rgba(41, 255, 209, 0.678);
-   animation: animate 10s linear infinite;
-   bottom: -150px;
- }
-
- .circles li:nth-child(1) {
-   left: 25%;
-   width: 80px;
-   height: 80px;
-   animation-delay: 0s;
- }
-
- .circles li:nth-child(2) {
-   left: 10%;
-   width: 20px;
-   height: 20px;
-   animation-delay: 2s;
-   animation-duration: 12s;
- }
-
- .circles li:nth-child(3) {
-   left: 70%;
-   width: 20px;
-   height: 20px;
-   animation-delay: 4s;
- }
-
- .circles li:nth-child(4) {
-   left: 40%;
-   width: 60px;
-   height: 60px;
-   animation-delay: 0s;
-   animation-duration: 18s;
- }
-
- .circles li:nth-child(5) {
-   left: 65%;
-   width: 20px;
-   height: 20px;
-   animation-delay: 0s;
- }
-
- .circles li:nth-child(6) {
-   left: 75%;
-   width: 110px;
-   height: 110px;
-   animation-delay: 3s;
- }
-
- .circles li:nth-child(7) {
-   left: 35%;
-   width: 150px;
-   height: 150px;
-   animation-delay: 7s;
- }
-
- .circles li:nth-child(8) {
-   left: 50%;
-   width: 25px;
-   height: 25px;
-   animation-delay: 15s;
-   animation-duration: 45s;
- }
-
- .circles li:nth-child(9) {
-   left: 20%;
-   width: 15px;
-   height: 15px;
-   animation-delay: 2s;
-   animation-duration: 35s;
- }
-
- .circles li:nth-child(10) {
-   left: 85%;
-   width: 150px;
-   height: 150px;
-   animation-delay: 0s;
-   animation-duration: 11s;
- }
-
- @keyframes animate {
-   0% {
-     transform: translateY(0) rotate(0deg);
-     opacity: 1;
-     border-radius: 0;
-   }
-
-   100% {
-     transform: translateY(-1000px) rotate(720deg);
-     opacity: 0;
-     border-radius: 50%;
-   }
- }
-
- /*
--- End BackGround Animation 
-*/
-
- /* end */
-
- .fontText {
-   font-family: 'Rubik', sans-serif;
- }
-
- body {
-   @apply bg-gray-900;
-   overflow-x: hidden;
-
- }
-
- @keyframes pulse-light {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.3;
-    z-index: -10;
-    
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.4;
-    z-index: -10;
-  }
+/* ── Design tokens ───────────────────────────────────────────── */
+:root {
+  --cyan:   #00f5ff;
+  --blue:   #0ea5e9;
+  --violet: #6366f1;
+  --bg:     #050b18;
+  --bg2:    #080f20;
+  --surface:#0d1528;
+  --border: rgba(0,245,255,0.12);
+  --glow:   0 0 24px rgba(0,245,255,0.25);
 }
 
-.animate-pulse-light {
-  animation: pulse-light 6s ease-in-out infinite;
+/* ── Base ────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
+/* ── Typography ──────────────────────────────────────────────── */
+.font-display { font-family: 'Space Grotesk', sans-serif; }
 
- .bg-green-gradient {
-   background: linear-gradient(157.81deg,
-       #def9fa -43.27%,
-       #bef3f5 -21.24%,
-       #9dedf0 12.19%,
-       #7de7eb 29.82%,
-       #5ce1e6 51.94%,
-       #33c7cf 90.29%);
+/* ── Neon glow helpers ───────────────────────────────────────── */
+.glow-cyan  { text-shadow: 0 0 20px rgba(0,245,255,0.7), 0 0 40px rgba(0,245,255,0.3); }
+.glow-blue  { text-shadow: 0 0 20px rgba(14,165,233,0.7); }
+.glow-box   { box-shadow: 0 0 0 1px var(--border), var(--glow); }
 
-   filter: blur(700px);
- }
+/* ── Glass card ─────────────────────────────────────────────── */
+.glass {
+  background: rgba(13,21,40,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+/* ── Gradient text ───────────────────────────────────────────── */
+.grad-text {
+  background: linear-gradient(135deg, #00f5ff 0%, #0ea5e9 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Neon button ─────────────────────────────────────────────── */
+.btn-neon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border: 1px solid rgba(0,245,255,0.5);
+  border-radius: 0.5rem;
+  color: #00f5ff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn-neon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,245,255,0.15), rgba(14,165,233,0.1));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-neon:hover { box-shadow: 0 0 20px rgba(0,245,255,0.4), 0 0 40px rgba(0,245,255,0.1); border-color: #00f5ff; }
+.btn-neon:hover::before { opacity: 1; }
+
+/* ── Animated background grid ────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Floating particles (Home hero) ──────────────────────────── */
+.area {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  background: rgba(0,245,255,0.08);
+  border: 1px solid rgba(0,245,255,0.15);
+  animation: floatUp 15s linear infinite;
+  bottom: -200px;
+  border-radius: 4px;
+}
+
+.circles li:nth-child(1)  { left:10%; width:60px;  height:60px;  animation-delay:0s;   animation-duration:14s; }
+.circles li:nth-child(2)  { left:20%; width:20px;  height:20px;  animation-delay:2s;   animation-duration:12s; }
+.circles li:nth-child(3)  { left:35%; width:40px;  height:40px;  animation-delay:4s;   animation-duration:16s; }
+.circles li:nth-child(4)  { left:50%; width:80px;  height:80px;  animation-delay:0s;   animation-duration:18s; }
+.circles li:nth-child(5)  { left:65%; width:20px;  height:20px;  animation-delay:1s;   animation-duration:11s; }
+.circles li:nth-child(6)  { left:75%; width:100px; height:100px; animation-delay:3s;   animation-duration:20s; }
+.circles li:nth-child(7)  { left:80%; width:30px;  height:30px;  animation-delay:7s;   animation-duration:13s; }
+.circles li:nth-child(8)  { left:5%;  width:15px;  height:15px;  animation-delay:5s;   animation-duration:22s; }
+.circles li:nth-child(9)  { left:90%; width:50px;  height:50px;  animation-delay:9s;   animation-duration:17s; }
+.circles li:nth-child(10) { left:45%; width:25px;  height:25px;  animation-delay:11s;  animation-duration:19s; }
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0.6; }
+  100% { transform: translateY(-110vh) rotate(720deg); opacity: 0; }
+}
+
+/* ── Skill card slide animations ─────────────────────────────── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(70px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-70px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.slide-right { animation: slideInRight 0.5s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+.slide-left  { animation: slideInLeft  0.5s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+
+/* ── Section divider line ────────────────────────────────────── */
+.section-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,245,255,0.4), transparent);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(0,245,255,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,245,255,0.6); }

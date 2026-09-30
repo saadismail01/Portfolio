@@ -5,4 +5,6 @@ import Projects from "./Projects.tsx";
 import Contacts from "./Contacts.tsx";
 import Footer from "./Footer.tsx";
 
-export { Navbar, Home, About, Projects, Contacts, Footer };
+import Skills from "./Skills.tsx";
+
+export { Navbar, Home, About, Projects, Skills, Contacts, Footer };

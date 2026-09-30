@@ -1,23 +1,32 @@
-import React from "react";
-
+﻿import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Project from "../components/Project";
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   return (
-    <div
-      id="projects"
-      className="flex flex-col w-full h-full items-center justify-center px-24 mt-44 lg:mt-24"
-    >
-      <div
-        data-aos="fade-down"
-        className="sm:text-5xl pb-16 w-full h-[20%] flex items-start justify-center text-teal-300 fontText lg:text-7xl"
-      >
-        Some Of My Project
-      </div>
-      <div className="flex flex-col space-y-4 items-center justify-center lg:flex-row lg:justify-center lg:items-center lg:space-x-4">
+    <section id="projects" className="relative py-32 px-6 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px section-line" />
+      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto">
+        <div data-aos="fade-up" className="text-center mb-20">
+          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Portfolio</p>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white">
+            Selected <span className="grad-text">Projects</span>
+          </h2>
+          <p className="mt-4 text-slate-400 max-w-xl mx-auto">
+            A collection of projects I built — each one pushing my skills further.
+          </p>
+        </div>
+
         <Project />
       </div>
-    </div>
+    </section>
   );
 };
 
