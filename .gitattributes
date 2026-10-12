@@ -1,0 +1,7 @@
+# Never apply line-ending conversion to binary assets
+*.pdf binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.svg text eol=lf
+*.mp4 binary

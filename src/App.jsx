@@ -1,25 +1,30 @@
-﻿/* eslint-disable react/no-unescaped-entities */
 import Navbar from "./pages/Navbar.tsx";
 import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
+import Experience from "./pages/Experience.tsx";
 import Projects from "./pages/Projects.tsx";
+import Skills from "./pages/Skills.tsx";
+import Education from "./pages/Education.tsx";
 import Contacts from "./pages/Contacts.tsx";
 import Footer from "./pages/Footer.tsx";
-import Skills from "./pages/Skills.tsx";
+import { useRevealOnScroll, useSpotlight } from "./effects.ts";
 
 const App = () => {
+  useRevealOnScroll();
+  useSpotlight();
+
   return (
-    <div className="w-full min-h-screen bg-[#050b18]">
+    <>
       <Navbar />
-      <main>
+      <main id="main">
         <Home />
-        <About />
+        <Experience />
         <Projects />
         <Skills />
+        <Education />
         <Contacts />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

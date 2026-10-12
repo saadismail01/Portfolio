@@ -1,33 +1,54 @@
-﻿import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Project from "../components/Project";
+import React from "react";
+import Section from "../components/Section";
+import ProjectVisual from "../components/ProjectVisual";
+import { ExternalIcon, GitHubIcon } from "../components/Icons";
+import { profile, work } from "../content";
 
-const Projects = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
+const Projects = () => (
+  <Section
+    id="work"
+    eyebrow="Selected work"
+    title={<>Earlier <span className="text-gradient">development work</span></>}
+    intro="Frontend projects from my development background — the foundation for how I review and coordinate web implementations today."
+  >
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+      {work.map(({ title, context, description, tags, url, urlLabel, visual, address }, i) => (
+        <li
+          key={title}
+          className="card card-hover spotlight reveal group flex flex-col overflow-hidden"
+          style={{ "--d": `${i * 90}ms` } as React.CSSProperties}
+        >
+          <ProjectVisual visual={visual} address={address} title={title} />
 
-  return (
-    <section id="projects" className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px section-line" />
-      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+          <div className="flex flex-1 flex-col p-5">
+            <p className="font-mono text-[11px] uppercase tracking-wider text-accent">{context}</p>
+            <h3 className="mt-1.5 text-lg font-bold text-ink">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">{description}</p>
 
-      <div className="max-w-7xl mx-auto">
-        <div data-aos="fade-up" className="text-center mb-20">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Portfolio</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white">
-            Selected <span className="grad-text">Projects</span>
-          </h2>
-          <p className="mt-4 text-slate-400 max-w-xl mx-auto">
-            A collection of projects I built — each one pushing my skills further.
-          </p>
-        </div>
+            <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-5">
+              <ul className="flex flex-wrap gap-1.5">
+                {tags.map((t) => <li key={t} className="chip">{t}</li>)}
+              </ul>
+              {url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer" className="link inline-flex items-center gap-1 text-sm">
+                  {urlLabel} <ExternalIcon className="h-3.5 w-3.5" />
+                </a>
+              ) : (
+                <span className="font-mono text-[11px] text-ink-muted">Not public</span>
+              )}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
 
-        <Project />
-      </div>
-    </section>
-  );
-};
+    <p className="reveal mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-soft">
+      Client and company systems are not publicly accessible.
+      <a href={profile.github} target="_blank" rel="noopener noreferrer" className="link inline-flex items-center gap-1.5">
+        <GitHubIcon className="h-4 w-4" /> More on GitHub
+      </a>
+    </p>
+  </Section>
+);
 
 export default Projects;

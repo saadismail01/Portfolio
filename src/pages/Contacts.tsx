@@ -1,65 +1,45 @@
-﻿import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import Section from "../components/Section";
+import { Saad_Ismail_cv } from "../assets";
+import { profile } from "../content";
+import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "../components/Icons";
 
-const Contacts = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
+const channels = [
+  { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: MailIcon, external: false },
+  { label: "LinkedIn", value: "linkedin.com/in/saad-ismail01", href: profile.linkedin, Icon: LinkedInIcon, external: true },
+  { label: "GitHub", value: "github.com/saadismail01", href: profile.github, Icon: GitHubIcon, external: true },
+  { label: "CV", value: "Download PDF", href: Saad_Ismail_cv, Icon: DownloadIcon, external: true },
+];
 
-  return (
-    <section id="contact" className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px section-line" />
-      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
-
-      {/* Glow blob */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-cyan-500/5 blur-3xl rounded-full pointer-events-none" />
-
-      <div className="max-w-3xl mx-auto">
-
-        {/* Heading */}
-        <div data-aos="fade-up" className="text-center mb-16">
-          <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-3">Get In Touch</p>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white">
-            Let's <span className="grad-text">Connect</span>
-          </h2>
-        </div>
-
-        {/* Card */}
-        <div data-aos="fade-up" data-aos-delay="100" className="glass p-10 sm:p-16 text-center relative overflow-hidden">
-          {/* Decorative corner accents */}
-          <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-cyan-500/30 rounded-tl-2xl" />
-          <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-cyan-500/30 rounded-tr-2xl" />
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-cyan-500/30 rounded-bl-2xl" />
-          <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-cyan-500/30 rounded-br-2xl" />
-
-          {/* Icon */}
-          <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 flex items-center justify-center">
-            <svg className="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-
-          <p className="text-slate-300 text-lg mb-4 leading-relaxed">
-            I am always open to new opportunities and collaborations. Have a project in mind or just want to chat?
-          </p>
-          <p className="text-slate-400 text-sm mb-8">I will get back to you within 24 hours.</p>
-
-          <a
-            href="mailto:saadismail001@gmail.com"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 group"
-          >
-            <span className="font-display font-semibold text-cyan-300 text-lg group-hover:text-cyan-200 transition-colors">
-              saadismail001@gmail.com
-            </span>
-            <svg className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
+const Contacts = () => (
+  <Section id="contact" eyebrow="Contact" title={<>Let&apos;s <span className="text-gradient">talk</span></>} intro={profile.availability}>
+    <div className="relative">
+      <div aria-hidden="true" className="orb left-1/2 top-1/2 h-64 w-[36rem] max-w-full -translate-x-1/2 -translate-y-1/2 bg-accent" />
+      <ul className="relative grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {channels.map(({ label, value, href, Icon, external }, i) => (
+          <li key={label} className="reveal" style={{ "--d": `${i * 70}ms` } as React.CSSProperties}>
+            <a
+              href={href}
+              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="card card-hover spotlight group flex h-full items-center gap-4 p-4 sm:p-5"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-violet text-white shadow-lg shadow-accent/25 transition-transform duration-300 group-hover:scale-110">
+                <Icon className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">{label}</span>
+                <span className="block truncate text-sm font-semibold text-ink transition-colors group-hover:text-accent sm:text-base">{value}</span>
+              </span>
+              <svg viewBox="0 0 24 24" className="ml-auto h-4 w-4 shrink-0 text-ink-muted transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <p className="reveal mt-6 text-sm text-ink-muted">Based in {profile.location}. Working in English.</p>
+  </Section>
+);
 
 export default Contacts;
