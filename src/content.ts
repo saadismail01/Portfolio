@@ -3,7 +3,7 @@
 
 export const profile = {
   name: "Saad Ismail",
-  title: "IT & Digital Product Specialist",
+  title: "Technical Project & Product Coordinator",
   focus: ["Web Technology", "Technical Coordination", "AI-Assisted Workflows"],
   summary:
     "Computer Science graduate working across IT operations, web technology and digital products. I coordinate with developers and designers, review web implementations, track and verify fixes, and translate business requirements into clear technical tasks. I work hands-on with AI tools such as Claude, Codex and ChatGPT for coding, research, documentation and troubleshooting — and review and test what they produce — and also generate videos with AI. Currently strengthening my foundations in SQL, Python and data engineering.",
@@ -23,7 +23,7 @@ export const facts = [
 ];
 
 export const capitalAcademy = {
-  role: "IT & Web Technology Operations",
+  role: "IT & Technical Project Coordinator",
   company: "Capital Academy",
   url: "https://capitalacademy.ai/en",
   urlLabel: "capitalacademy.ai",
@@ -90,6 +90,60 @@ export const earlierRoles = [
   { role: "Internships", org: "Verozone Solutions EG · Genius House · Jinan University", period: "2022 – 2023" },
 ];
 
+export type CaseStudy = {
+  title: string;
+  context: string;
+  url: string;
+  urlLabel: string;
+  visual: "lms" | "menuify";
+  /** Shown in the browser-frame address bar of the card visual. */
+  address: string;
+  problem: string;
+  role: string;
+  shipped: string[];
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    title: "Capital Academy LMS",
+    context: "Digital education · since May 2024",
+    url: "https://capitalacademy.ai/en",
+    urlLabel: "capitalacademy.ai",
+    visual: "lms",
+    address: "capitalacademy.ai",
+    problem:
+      "A finance and trading education startup needed one platform for courses, digital books, podcasts, certificates and paid subscriptions — delivered by external developers and designers who needed clear direction.",
+    role:
+      "Coordinated between the business and the development and design team: requirements, Figma-vs-React review, bug tracking, release testing and integration follow-up.",
+    shipped: [
+      "LMS with 65+ courses & 5 certificate programmes",
+      "Video learning, digital books & podcasts",
+      "Subscriptions & team licences",
+      "Payments, protected video & certificates",
+      "AI finance chatbot & AI video",
+    ],
+  },
+  {
+    title: "Menuify",
+    context: "Co-founded digital product",
+    url: "https://www.menuify-qr.com/",
+    urlLabel: "menuify-qr.com",
+    visual: "menuify",
+    address: "menuify-qr.com",
+    problem:
+      "Small businesses in Lebanon and Syria often share products through social media messages and take orders by hand, with no organised online presence.",
+    role:
+      "Co-founder leading product direction, pricing and go-to-market, and coordinating development with my development partner.",
+    shipped: [
+      "QR menus & digital catalogues",
+      "WhatsApp ordering",
+      "Online store with cart, orders & stock",
+      "Coupons, staff roles & sales analytics",
+      "English / Arabic interface",
+    ],
+  },
+];
+
 export type WorkItem = {
   title: string;
   context: string;
@@ -97,38 +151,28 @@ export type WorkItem = {
   tags: string[];
   url?: string;
   urlLabel?: string;
-  visual: "dashboard" | "website" | "cardBank";
-  /** Shown in the browser-frame address bar of the card visual. */
-  address: string;
 };
 
 export const work: WorkItem[] = [
   {
     title: "Management Systems",
     context: "SEG Company",
-    description:
-      "Frontend delivery for three internal management systems — Sam, Tom and Meters KEnergy — including API-driven interfaces.",
-    tags: ["React", "Angular", "TypeScript", "APIs"],
-    visual: "dashboard",
-    address: "internal · management system",
+    description: "Frontend for three internal management systems — Sam, Tom and Meters KEnergy — with API-driven interfaces.",
+    tags: ["React", "Angular", "TypeScript"],
   },
   {
     title: "Kime",
     context: "Verozone Solutions EG · internship",
-    description: "Frontend contribution to a marketing website during a front-end internship (Nov 2022 – Jan 2023).",
+    description: "Frontend contribution to a marketing website (Nov 2022 – Jan 2023).",
     tags: ["React", "JavaScript"],
-    visual: "website",
-    address: "kime · marketing website",
   },
   {
     title: "Card Bank",
-    context: "Personal frontend project",
-    description: "Responsive online-banking landing page built to practise component structure and responsive layout.",
-    tags: ["React", "JavaScript", "Tailwind CSS"],
+    context: "Personal project",
+    description: "Responsive online-banking landing page.",
+    tags: ["React", "Tailwind CSS"],
     url: "https://bank-web-wj7d.vercel.app/",
     urlLabel: "View live",
-    visual: "cardBank",
-    address: "bank-web-wj7d.vercel.app",
   },
 ];
 

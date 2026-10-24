@@ -13,7 +13,7 @@ There is no test suite.
 
 ## Purpose & content rules
 
-Professional portfolio for Saad Ismail, aimed at recruiters for IT / digital product / technology operations roles in Germany and Europe. Positioning is "IT & Digital Product Specialist", not software engineer.
+Professional portfolio for Saad Ismail, aimed at recruiters for IT / digital product / technology operations roles in Germany and Europe. Positioning is "Technical Project & Product Coordinator", not software engineer.
 
 - All copy lives in `src/content.ts`. Edit text there, not in components.
 - Content must stay consistent with the CV (`src/assets/Saad_Ismail_CV.pdf`). Do not invent dates, metrics, user counts, clients, certifications or proficiency levels; no skill percentages. Data engineering items are presented as current learning, never as experience.

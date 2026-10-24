@@ -5,7 +5,7 @@ import { DownloadIcon, MoonIcon, SunIcon } from "../components/Icons";
 
 const NAV_LINKS = [
   { label: "Experience", to: "experience" },
-  { label: "Work", to: "work" },
+  { label: "Case Studies", to: "work" },
   { label: "Skills", to: "skills" },
   { label: "Education", to: "education" },
   { label: "Contact", to: "contact" },
