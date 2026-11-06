@@ -8,7 +8,7 @@ export const profile = {
   summary:
     "Computer Science graduate working across IT operations, web technology and digital products. I coordinate with developers and designers, review web implementations, track and verify fixes, and translate business requirements into clear technical tasks. I work hands-on with AI tools such as Claude, Codex and ChatGPT for coding, research, documentation and troubleshooting — and review and test what they produce — and also generate videos with AI. Currently strengthening my foundations in SQL, Python and data engineering.",
   availability:
-    "Open to suitable IT, digital product and technology operations opportunities in Germany and across Europe.",
+    "Open to suitable IT, digital product and technology operations opportunities.",
   location: "Lebanon",
   email: "saadismail001@gmail.com",
   linkedin: "https://www.linkedin.com/in/saad-ismail01",
